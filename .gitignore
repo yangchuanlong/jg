@@ -1,0 +1,16 @@
+node_modules
+dist
+.idea
+.cache
+.history
+.vscode
+package-lock.json
+npm-debug.log
+.bak
+.happypack
+*yarn.lock
+yarn-error.log
+yarn-error.log
+tmp_*.js
+dll
+.prettierrc.js

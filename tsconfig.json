@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "pages/*": ["src/pages/*"],
+      "components/*": ["src/components/*"],
+      "constants/*": ["src/constants/*"],
+      "router/*": ["src/router/*"],
+      "utils/*": ["src/utils/*"],
+      "images/*": ["src/images/*"],
+      "styles/*": ["src/styles/*"],
+      "service/*": ["src/service/*"],
+      "hooks/*": ["src/hooks/*"],
+      "store/*": ["src/store/*"],
+      "react-dom": ["@hot-loader/react-dom"]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+* text=auto
+
+*.html text
+*.css text
+*.js text
+*.jsx text
+*.tsx text
+*.ts text
+*.less text
+*.json text
+
+*.jpg -text
+*.png -text
+*.gif -text
+*.jpeg -text
+*.xlsx -text
+*.ttf -text
+*.woff -text
+*.woff2 -text
