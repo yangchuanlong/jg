@@ -62,16 +62,19 @@ function Content() {
             path={path}
             key={path}
             element={(
-              <Suspense
-                fallback={(
-                  <div className={styles.loading}>
-                    <LoadingOutlined />
-                    正在加载中...
-                  </div>
-                )}
-              >
-                <route.component />
-              </Suspense>
+              <div className={styles.main_inner}>
+                <Suspense
+                  fallback={(
+                    <div className={styles.loading}>
+                      <LoadingOutlined />
+                      正在加载中...
+                    </div>
+                  )}
+                >
+                  <route.component />
+                </Suspense>
+                <div>footer bar</div>
+              </div>
             )}
           />
         );

@@ -109,10 +109,10 @@ module.exports = {
               },
             },
           },
-          {
-            loader: "postcss-loader",
-            options: {},
-          },
+          // {
+          //   loader: "postcss-loader",
+          //   options: {},
+          // },
           {
             loader: "less-loader",
           },
