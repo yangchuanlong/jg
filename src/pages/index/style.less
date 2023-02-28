@@ -1,0 +1,53 @@
+.ad{
+    background: #fff;
+    margin: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    border-radius: 10px;;
+}
+
+.address{
+    text-align: center;
+    margin-top: 4px;
+}
+.filterBtnsWrapper{
+    padding: 0 20px;
+    margin-top: 16px;
+    text-align: center;
+    display: flex;;
+    :global{
+        .adm-button{
+            &:nth-child(2){
+                margin-left: 20px;
+            }
+            
+            flex: 1;
+        }
+    }
+}
+
+.park{
+    display: flex;
+    margin: 8px;
+    background: #fff;
+    padding: 8px;
+    img{
+        width: 60px;
+        height: 60px;
+        border-radius: 8px;
+    }
+    .areaInfo{
+        margin-left: 8px;
+    }
+    .tagsWrapper{
+        :global{
+            .adm-button{
+                &:not(:first-child) {
+                    margin-left: 8px;
+                }
+            }
+        }
+    }
+}

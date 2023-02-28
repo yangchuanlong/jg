@@ -1,11 +1,17 @@
 import { LoadingOutlined } from '@ant-design/icons';
-import { Toast } from 'antd-mobile';
+import { Toast, TabBar } from 'antd-mobile';
 import config from 'constants/config';
 import Cookie from 'js-cookie';
 import moment from 'moment';
 import 'moment/locale/zh-cn'; // moment 语言设置为中文
 import Login from 'pages/login';
 import React, { Suspense, useEffect } from 'react';
+import {
+  AppOutline,
+  MessageOutline,
+  UnorderedListOutline,
+  UserOutline,
+} from 'antd-mobile-icons';
 import {
   HashRouter, Navigate, Route,
   Routes,
@@ -73,7 +79,13 @@ function Content() {
                 >
                   <route.component />
                 </Suspense>
-                <div>footer bar</div>
+                <div className={styles.bottom}>
+                  <TabBar>
+                    <TabBar.Item key="index" icon={<AppOutline />} title="首页" />
+                    <TabBar.Item key="message" icon={<MessageOutline />} title="首页" />
+                    <TabBar.Item key="mine" icon={<UserOutline />} title="我的" />
+                  </TabBar>
+                </div>
               </div>
             )}
           />
