@@ -11,5 +11,9 @@ export default [
     path: '/index',
     component: React.lazy(() => import('pages/index/index')),
   },
+  {
+    path: '/park-detail',
+    component: React.lazy(() => import('pages/park-detail/index')),
+  },
   ...error,
 ];

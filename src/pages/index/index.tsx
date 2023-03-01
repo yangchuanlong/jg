@@ -1,11 +1,12 @@
 import React from 'react';
 import { Button, SearchBar } from 'antd-mobile';
+import { useNavigate } from 'react-router-dom';
 
 import styles from './style.less';
 import factoryAreaPng from './demo.webp';
 
 export default function Index() {
-  console.log('abc');
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -16,7 +17,12 @@ export default function Index() {
         <Button color="primary">产业筛选</Button>
         <Button color="primary">其他筛选</Button>
       </div>
-      <div className={styles.park}>
+      <div
+        className={styles.park}
+        onClick={() => {
+          navigate('/park-detail');
+        }}
+      >
         <img src={factoryAreaPng} alt="" />
         <div className={styles.areaInfo}>
           <div>
@@ -32,7 +38,12 @@ export default function Index() {
         </div>
       </div>
 
-      <div className={styles.park}>
+      <div
+        className={styles.park}
+        onClick={() => {
+          navigate('/park-detail');
+        }}
+      >
         <img src={factoryAreaPng} alt="" />
         <div className={styles.areaInfo}>
           <div>
