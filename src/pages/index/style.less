@@ -1,11 +1,16 @@
+.searchBar{
+    margin: 8px 8px 0;
+}
+
 .ad{
     background: #fff;
-    margin: 4px;
+    margin: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80px;
-    border-radius: 10px;;
+    height: 90px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .1);
 }
 
 .address{
@@ -34,20 +39,32 @@
     background: #fff;
     padding: 8px;
     img{
-        width: 60px;
-        height: 60px;
+        width: 80px;
+        height: 80px;
         border-radius: 8px;
     }
     .areaInfo{
         margin-left: 8px;
+        .parkName{
+            font-weight: bold;
+            font-size: var(--adm-font-size-10);
+        }
+        .briefTxt{
+            margin-top: 4px;
+        }
     }
     .tagsWrapper{
+        margin-top: 4px;
         :global{
-            .adm-button{
+            .adm-tag{
+                color: #849aae;
+                font-size: var(--adm-font-size-7);
+                padding: 0 0.8vw;
                 &:not(:first-child) {
                     margin-left: 8px;
                 }
             }
+            
         }
     }
 }

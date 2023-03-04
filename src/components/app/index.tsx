@@ -60,7 +60,7 @@ function Content() {
   return (
     <Routes>
       {routers.map((route) => {
-        const { path } = route;
+        const { path, showTabBar } = route;
         console.log('routers:', route);
 
         return (
@@ -77,15 +77,20 @@ function Content() {
                     </div>
                   )}
                 >
-                  <route.component />
+                  <route.component className="page" />
                 </Suspense>
-                <div className={styles.bottom}>
-                  <TabBar>
-                    <TabBar.Item key="index" icon={<AppOutline />} title="首页" />
-                    <TabBar.Item key="message" icon={<MessageOutline />} title="首页" />
-                    <TabBar.Item key="mine" icon={<UserOutline />} title="我的" />
-                  </TabBar>
-                </div>
+                {
+                  showTabBar && (
+                    <div className={styles.bottom}>
+                      <TabBar>
+                        <TabBar.Item key="index" icon={<AppOutline />} title="首页" />
+                        <TabBar.Item key="message" icon={<MessageOutline />} title="首页" />
+                        <TabBar.Item key="mine" icon={<UserOutline />} title="我的" />
+                      </TabBar>
+                    </div>
+                  )
+                }
+
               </div>
             )}
           />
