@@ -1,5 +1,7 @@
-import React from 'react';
-import { Button, SearchBar, Tag } from 'antd-mobile';
+import React, { useState } from 'react';
+import {
+  Button, SearchBar, Tag, Popup,
+} from 'antd-mobile';
 import { useNavigate } from 'react-router-dom';
 
 import styles from './style.less';
@@ -7,6 +9,7 @@ import factoryAreaPng from './demo.webp';
 
 export default function Index() {
   const navigate = useNavigate();
+  const [industrySearchVisible, setIndustrySearchVisible] = useState(false);
 
   return (
     <div className={`page ${styles.wrapper}`}>
@@ -14,7 +17,12 @@ export default function Index() {
       <div className={styles.ad}>招商广告</div>
       <div className={styles.address}>广东 · 深圳 · 南山区</div>
       <div className={styles.filterBtnsWrapper}>
-        <Button color="primary">产业筛选</Button>
+        <Button
+          color="primary"
+          onClick={() => setIndustrySearchVisible(true)}
+        >
+          产业筛选
+        </Button>
         <Button color="primary">其他筛选</Button>
       </div>
       <div
@@ -74,6 +82,26 @@ export default function Index() {
           </div>
         </div>
       </div>
+
+      <Popup
+        visible={industrySearchVisible}
+        bodyStyle={{
+          borderTopLeftRadius: '8px',
+          borderTopRightRadius: '8px',
+          minHeight: '60vh',
+        }}
+      >
+        <div className={styles.searchPanelTitle}>
+          <span>产业筛选</span>
+          <span
+            className={styles.closeIcon}
+            onClick={() => setIndustrySearchVisible(false)}
+          >
+            X
+          </span>
+        </div>
+      </Popup>
+      <Popup />
     </div>
   );
 }
