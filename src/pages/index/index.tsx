@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Button, SearchBar, Tag, Popup,
+  Button, SearchBar, Tag, Popup, List,
 } from 'antd-mobile';
 import { useNavigate } from 'react-router-dom';
 
@@ -100,6 +100,22 @@ export default function Index() {
             X
           </span>
         </div>
+        <SearchBar placeholder="请输入搜索内容" className={styles.popupSearchBar} />
+        <div className={styles.panelSectionTitle}>历史搜素</div>
+        <div className={styles.searchHistoryItemsWrapper}>
+          <span>电子信息</span>
+          <span>新能源</span>
+          <span>生物医药</span>
+          <span>电子信息</span>
+        </div>
+        <div className={styles.panelSectionTitle}>热门搜素</div>
+        <List>
+          <List.Item className={styles.hotSearchItem}>
+            <span>10</span>
+            <span className={styles.keyword}>新能源</span>
+            <span>热度888w</span>
+          </List.Item>
+        </List>
       </Popup>
       <Popup />
     </div>

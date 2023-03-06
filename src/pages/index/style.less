@@ -38,6 +38,9 @@
     margin: 8px;
     background: #fff;
     padding: 8px;
+    &:not(:last-child) {
+        border-bottom:1px solid #f0f0f0;
+    }
     img{
         width: 80px;
         height: 80px;
@@ -79,4 +82,57 @@
         right: 16px;
         top: 4px;
     }
+}
+
+.popupSearchBar{
+    margin: 8px 8px 0;
+}
+
+.panelSectionTitle{
+    color: #232326;
+    margin: 8px;
+    font-size: var(--adm-font-size-8);
+}
+
+.searchHistoryItemsWrapper{
+    margin: 8px;
+    span{
+        &:not(:first-child) {
+            margin-left: 8px;
+        }
+    };
+}
+
+.searchHistoryItemsWrapper span, .hotSearchItem .keyword{
+    height: 23px;
+    line-height: 24px;
+    display: inline-block;
+    border-radius: 3px;
+    color: #686868;
+    background-color: #f0f2f5;
+    padding-left: 13px;
+    padding-right: 13px;
+    box-sizing: border-box;
+}
+
+.hotSearchItem{
+    :global{
+        .adm-list-item-content-main{
+            display: flex;
+            box-sizing: border-box;
+            span{
+                display: inline-block;
+                &:first-child{
+                    width: 24px;
+                    margin-right: 8px;
+                }
+                &:last-child{
+                    font-size: 14px;
+                    flex: 1;
+                    text-align: right;
+                }
+            }
+        }
+    }
+    
 }
