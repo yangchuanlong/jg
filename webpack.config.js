@@ -233,13 +233,13 @@ module.exports = {
     },
     proxy: [
       {
-        context: ["/auth", "/marketing-wireless"],
+        context: ["/auth", "/biguiyuan"],
         // target: "https://yinweifuli-wireless-api-dev.eshiinfo.com/", // 走dev网关
-        target: "https://yinweifuli-wireless-api-test.eshiinfo.com/", // 走test网关
+        target: "http://101.35.231.233:9999/", // 走test网关
         changeOrigin: true,
         headers: {
           // origin: "https://yinweifuli-wireless-api-dev.eshiinfo.com/", // dev
-          origin: "https://yinweifuli-wireless-api-test.eshiinfo.com", // test
+          origin: "http://101.35.231.233:9999", // test
         },
       },
       {

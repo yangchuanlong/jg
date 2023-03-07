@@ -1,4 +1,4 @@
-import { LoadingOutlined } from '@ant-design/icons';
+import { LoadingOutlined, SettingOutlined } from '@ant-design/icons';
 import { Toast, TabBar } from 'antd-mobile';
 import config from 'constants/config';
 import Cookie from 'js-cookie';
@@ -35,6 +35,7 @@ function Redirect({ path }) {
 
 function Content() {
   const location = useLocation();
+  const navigate = useNavigate();
   // 从微信小程序来的
   if (isWeixin()) {
     // wx.miniProgram.getEnv((res) => {
@@ -82,10 +83,15 @@ function Content() {
                 {
                   showTabBar && (
                     <div className={styles.bottom}>
-                      <TabBar>
-                        <TabBar.Item key="index" icon={<AppOutline />} title="首页" />
-                        <TabBar.Item key="message" icon={<MessageOutline />} title="首页" />
-                        <TabBar.Item key="mine" icon={<UserOutline />} title="我的" />
+                      <TabBar
+                        onChange={(key) => {
+                          key.startsWith('/') && navigate(key);
+                        }}
+                      >
+                        <TabBar.Item key="/index" icon={<AppOutline />} title="首页" />
+                        <TabBar.Item key="message" icon={<MessageOutline />} title="消息" />
+                        <TabBar.Item key="setting" icon={<SettingOutlined />} title="设置" />
+                        <TabBar.Item key="/my-park" icon={<UserOutline />} title="我的园区" />
                       </TabBar>
                     </div>
                   )

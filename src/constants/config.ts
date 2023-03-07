@@ -17,25 +17,25 @@ const envConfig = {
     mock: false,
     publicPath: '',
     host: 'https://yinweifuli-pc-web-api-dev.eshiinfo.com',
-    bucketName: 'yishi-yinweifuli-public-dev',
+    bucketName: 'dev',
   },
   test: {
     mock: false,
     publicPath: '',
     host: 'https://yinweifuli-pc-web-api-test.eshiinfo.com/',
-    bucketName: 'yishi-yinweifuli-public-test',
+    bucketName: 'test',
   },
   uat: {
     mock: false,
     publicPath: '',
     host: 'https://yinweifuli-pc-web-api-uat.eshiinfo.com',
-    bucketName: 'yishi-yinweifuli-public-uat',
+    bucketName: 'uat',
   },
   prod: {
     mock: false,
     publicPath: '',
     host: 'https://yinweifuli-pc-web-api.eshiinfo.com/',
-    bucketName: 'yishi-yinweifuli-public',
+    bucketName: 'public',
   },
 };
 

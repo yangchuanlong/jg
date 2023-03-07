@@ -11,7 +11,7 @@ export default function ParkDetail() {
   const navigate = useNavigate();
   return (
     <div className={styles.container}>
-      <div className={styles.parkName}>深埋科技园</div>
+      <div className={styles.parkName}>深圳科技园</div>
 
       <div className={styles.park}>
         <img src={factoryAreaPng} alt="" />
@@ -40,7 +40,7 @@ export default function ParkDetail() {
       <div className={styles.actionsWrapper}>
         <Button color="primary">
           <span dangerouslySetInnerHTML={{ __html: avatarSvg }} />
-          <span>专家客服</span>
+          <span>专属客服</span>
         </Button>
         <Button color="primary" onClick={() => navigate('/compare')}>
           <span dangerouslySetInnerHTML={{ __html: compareSvg }} />

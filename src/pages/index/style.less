@@ -75,8 +75,9 @@
 .searchPanelTitle{
     position: relative;
     text-align: center;
-    padding-top: 4px;
-    font-size: var(--adm-font-size-8);
+    padding-top: 8px;
+    font-size: var(--adm-font-size-10);
+    font-weight: bold;
     .closeIcon{
         position: absolute;
         right: 16px;
@@ -94,7 +95,7 @@
     font-size: var(--adm-font-size-8);
 }
 
-.searchHistoryItemsWrapper{
+.searchItemsWrapper{
     margin: 8px;
     span{
         &:not(:first-child) {
@@ -103,7 +104,7 @@
     };
 }
 
-.searchHistoryItemsWrapper span, .hotSearchItem .keyword{
+.searchItemsWrapper span, .hotSearchItem .keyword{
     height: 23px;
     line-height: 24px;
     display: inline-block;
@@ -135,4 +136,20 @@
         }
     }
     
+}
+
+.panelBtnsWrapper{
+    position: absolute;
+    bottom: 8px;;
+    left: 8px;
+    right: 8px;
+    display: flex;
+    :global{
+        .adm-button{
+            flex: 1;
+            &:nth-child(2) {
+                margin-left: 16px;
+            }
+        }
+    }
 }

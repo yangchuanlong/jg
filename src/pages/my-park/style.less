@@ -1,0 +1,84 @@
+.container{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.pageTitle{
+    text-align: center;
+    margin-top: 16px;
+    font-size: var(--adm-font-size-10);
+    font-weight: bold;;
+}
+.park{
+    display: flex;
+    margin: 8px;
+    background: #fff;
+    padding: 8px;
+    img{
+        width: 94px;
+        height: 94px;
+        border-radius: 8px;
+    }
+    .areaInfo{
+        margin-left: 8px;
+        .parkName{
+            font-weight: bold;
+            font-size: var(--adm-font-size-10);
+        }
+        .account{
+            margin-top: 4px;
+            font-size: var(--adm-font-size-8);
+        }
+    }
+}
+.itemInfoWrapper{
+    background: #fff;
+    border-radius: 16px;
+    flex: 1;
+    margin: 8px;
+}
+.attentionWrapper{
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    span{
+        display: inline-block;
+        &:nth-child(2) {
+            margin-left: 8px;
+        }
+    }
+    svg{
+        width: 18px;
+    }
+}
+
+.actionsWrapper{
+    display: flex;
+    padding: 0 8px;
+    justify-content: space-between;
+    :global{
+        .adm-button{
+            flex: 1;
+            &:not(:first-child) {
+                margin-left: 8px;
+            }
+            span{
+                display: inline-block;
+                align-items: center;
+                svg{
+                    width: 20px;
+                    margin-top: 8px;
+                    margin-right: 8px;
+                    path {
+                        fill: #fff;
+                    }
+                }
+            }
+            &>span{
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+}

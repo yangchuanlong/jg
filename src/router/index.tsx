@@ -20,5 +20,9 @@ export default [
     path: '/compare',
     component: React.lazy(() => import('pages/compare/compare.tsx')),
   },
+  {
+    path: '/my-park',
+    component: React.lazy(() => import('pages/my-park/my-park.tsx')),
+  },
   ...error,
 ];
