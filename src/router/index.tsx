@@ -24,5 +24,9 @@ export default [
     path: '/my-park',
     component: React.lazy(() => import('pages/my-park/my-park.tsx')),
   },
+  {
+    path: '/recommend',
+    component: React.lazy(() => import('pages/recommend/recommend.tsx')),
+  },
   ...error,
 ];
