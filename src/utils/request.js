@@ -59,6 +59,11 @@ axios.interceptors.response.use(
           params: config.params,
         });
       });
+    } else {
+      const { code, msg } = data || {};
+      if (code !== 0) {
+        return Promise.reject(new Error(msg));
+      }
     }
     return data;
   },

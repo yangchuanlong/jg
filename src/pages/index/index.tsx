@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { observer } from 'mobx-react';
 import {
   Button, SearchBar, Tag, Popup, List,
 } from 'antd-mobile';
@@ -8,7 +9,7 @@ import useMobxStores from 'hooks/useMobxStores';
 import styles from './style.less';
 import factoryAreaPng from './demo.webp';
 
-export default function Index() {
+function Index() {
   const navigate = useNavigate();
   const [industrySearchVisible, setIndustrySearchVisible] = useState(false);
   const [otherSearchVisible, setOtherSearchVisible] = useState(false);
@@ -38,83 +39,36 @@ export default function Index() {
           其他筛选
         </Button>
       </div>
-      <div
-        className={styles.park}
-        onClick={() => {
-          navigate('/park-detail');
-        }}
-      >
-        <img src={factoryAreaPng} alt="" />
-        <div className={styles.areaInfo}>
-          <div className={styles.parkName}>深圳科技园</div>
-          <div className={styles.briefTxt}>
-            企业数目:618,
-            招商产业：电子信息，广电一体机，生物医药
-          </div>
-          <div className={styles.tagsWrapper}>
-            <Tag color="#f5f7f9">免租金</Tag>
-            <Tag color="#f5f7f9">免租金</Tag>
-            <Tag color="#f5f7f9">定制厂房</Tag>
-          </div>
-        </div>
-      </div>
 
-      <div
-        className={styles.park}
-        onClick={() => {
-          navigate('/park-detail');
-        }}
-      >
-        <img src={factoryAreaPng} alt="" />
-        <div className={styles.areaInfo}>
-          <div className={styles.parkName}>深圳科技园</div>
-          <div className={styles.briefTxt}>
-            企业数目:618,
-            招商产业：电子信息，广电一体机，生物医药
-          </div>
-          <div className={styles.tagsWrapper}>
-            <Tag color="#f5f7f9">免租金</Tag>
-            <Tag color="#f5f7f9">免租金</Tag>
-            <Tag color="#f5f7f9">定制厂房</Tag>
-          </div>
-        </div>
-      </div>
-
-      <div className={styles.park}>
-        <img src={factoryAreaPng} alt="" />
-        <div className={styles.areaInfo}>
-          <div className={styles.parkName}>深圳科技园</div>
-          <div className={styles.briefTxt}>
-            企业数目:618,
-            招商产业：电子信息，广电一体机，生物医药
-          </div>
-          <div className={styles.tagsWrapper}>
-            <Tag color="#f5f7f9">免租金</Tag>
-            <Tag color="#f5f7f9">免租金</Tag>
-            <Tag color="#f5f7f9">定制厂房</Tag>
-          </div>
-        </div>
-      </div>
       {
-        parkList.map((park) => (
-          <div className={styles.park}>
+        indexStore.parkList.map((park) => (
+          <div
+            className={styles.park}
+            onClick={() => {
+              navigate('/park-detail');
+            }}
+          >
             <img src={factoryAreaPng} alt="" />
             <div className={styles.areaInfo}>
-              <div className={styles.parkName}>{park.name}</div>
+              <div className={styles.parkName}>
+                <span className={styles.name}>{park.name}</span>
+                <span className={styles.enterpriseNum}>
+                  企业数目:
+                  {park.enterpriseNum}
+                </span>
+              </div>
               <div className={styles.briefTxt}>
-                企业数目:618,
-                招商产业：电子信息，广电一体机，生物医药
+                {park.introduction}
               </div>
               <div className={styles.tagsWrapper}>
-                <Tag color="#f5f7f9">免租金</Tag>
-                <Tag color="#f5f7f9">免租金</Tag>
-                <Tag color="#f5f7f9">定制厂房</Tag>
+                {
+                  park.tagVOS?.map((tag) => <Tag color="#f5f7f9">{tag.tagName}</Tag>)
+                }
               </div>
             </div>
           </div>
         ))
       }
-
       <Popup
         visible={industrySearchVisible}
         bodyStyle={{
@@ -205,3 +159,5 @@ export default function Index() {
     </div>
   );
 }
+
+export default observer(Index);

@@ -1,3 +1,6 @@
+.wrapper{
+    padding-bottom: 50px;
+}
 .searchBar{
     margin: 8px 8px 0;
 }
@@ -49,11 +52,22 @@
     .areaInfo{
         margin-left: 8px;
         .parkName{
-            font-weight: bold;
-            font-size: var(--adm-font-size-10);
+            .name{
+                font-weight: bold;
+                font-size: var(--adm-font-size-10);
+            }
+            
+            .enterpriseNum{
+                
+                margin-left: 8px;
+            }
         }
         .briefTxt{
             margin-top: 4px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
         }
     }
     .tagsWrapper{

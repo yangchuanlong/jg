@@ -13,10 +13,13 @@ class IndexStore {
     async getParkList() {
       try {
         const { data } = await request({
-          url: '/biguiyuan/biguiyuan-api/park/list',
+          url: '/biguiyuan/biguiyuan-api/park/find-simple-page',
+          method: 'POST',
+          data: {},
         });
+        this.parkList = data?.records || [];
       } catch (e) {
-
+        console.log('get park list e:', e);
       }
     }
 }
