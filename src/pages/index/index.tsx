@@ -41,14 +41,15 @@ function Index() {
       </div>
 
       {
-        indexStore.parkList.map((park) => (
+        indexStore.parkList.map((park, idx) => (
           <div
             className={styles.park}
             onClick={() => {
-              navigate('/park-detail');
+              const constrastId = idx < parkList.length - 1 ? parkList[idx + 1].parkId : parkList[idx - 1].parkId; // todo? 先用这个方法对比
+              navigate(`/park-detail?parkId=${park.parkId}&constrastId=${constrastId}`);
             }}
           >
-            <img src={factoryAreaPng} alt="" />
+            <img src={park.icon || factoryAreaPng} alt="" />
             <div className={styles.areaInfo}>
               <div className={styles.parkName}>
                 <span className={styles.name}>{park.name}</span>

@@ -11,3 +11,31 @@
     text-align: center;
     padding: 8px;
 }
+
+.feeCompareItem{
+    padding-left: 0;
+    :global{
+        .adm-list-item-content{
+            padding-right: 0;
+        }
+        .adm-list-item-content-main{
+            display: flex;
+            font-size: 14px;
+            &>div{
+                &:first-child{
+                    width: 80px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+                &:not(:first-child){
+                    flex: 1;
+                    white-space: nowrap;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    
+}
