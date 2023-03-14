@@ -53,8 +53,6 @@ const getApiAppName = function (url: any) {
   const { host } = config;
   if (url.includes('question')) {
     url = `marketing-wireless/yinweifuli-marketing-wireless${url}`;
-  } else if (url.includes('user')) {
-    url = `user-wireless/yinweifuli-user-wireless${url}`;
   } else if (url.includes('commodity')) {
     url = `shop-wireless/yinweifuli-shop-wireless${url}`;
   } else if (url.includes('category')) {
