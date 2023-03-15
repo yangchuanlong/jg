@@ -32,5 +32,9 @@ export default [
     path: 'register',
     component: React.lazy(() => import('pages/register/register.tsx')),
   },
+  {
+    path: 'register-extra',
+    component: React.lazy(() => import('pages/register-extra/register-extra.tsx')),
+  },
   ...error,
 ];
