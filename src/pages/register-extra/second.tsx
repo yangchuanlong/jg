@@ -1,7 +1,8 @@
 import React from 'react';
 import {
-  Input, Toast, Form, Button, Picker,
+  Input, Toast, Form, Button, Picker, Checkbox,
 } from 'antd-mobile';
+import { Select } from 'antd';
 import styles from './style.less';
 
 const FormItem = Form.Item;
@@ -56,6 +57,61 @@ export default function Second() {
           >
             选择
           </Button>
+        </FormItem>
+        <FormItem
+          name="name"
+          label="出售价格"
+          rules={[{ required: true, message: '请输入出售价格' }]}
+        >
+          <Input placeholder="出售价格" />
+        </FormItem>
+        <FormItem
+          name="name"
+          label="出租价格"
+          rules={[{ required: true, message: '请输入出租价格' }]}
+        >
+          <Input placeholder="出租价格" />
+        </FormItem>
+        <FormItem label="所需企业类型">
+          <Select
+            options={[
+              { label: '广州', value: 1 },
+            ]}
+          />
+        </FormItem>
+        <FormItem label="所属企业生产范围值" style={{ display: 'flex' }}>
+          <FormItem><Input placeholder="最低值" /></FormItem>
+          <FormItem><Input placeholder="最高值" /></FormItem>
+        </FormItem>
+        <FormItem label="园区内是否有申请排污总量（吨）">
+          <Checkbox />
+        </FormItem>
+        <FormItem label="园区容积率">
+          <Input placeholder="园区容积率" />
+        </FormItem>
+        <FormItem label="园区层高（米）">
+          <Input placeholder="园区层高（米）" />
+        </FormItem>
+        <FormItem label="承重（吨）">
+          <Input placeholder="承重（吨）" />
+        </FormItem>
+        <FormItem label="水费（元/吨）">
+          <Input placeholder="水费（元/吨）" />
+        </FormItem>
+        <FormItem label="电费（元/度）">
+          <Input placeholder="电费（元/度）" />
+        </FormItem>
+        <FormItem label="天然气费（元/立方）">
+          <Input placeholder="天然气费（元/立方）" />
+        </FormItem>
+        <FormItem label="管理费（元/平方）">
+          <Input placeholder="管理费（元/平方）" />
+        </FormItem>
+        <FormItem label="是否可自建厂房">
+          <Checkbox />
+        </FormItem>
+        <FormItem label="是否可自建宿舍">
+          <Checkbox />
         </FormItem>
       </Form>
     </div>
